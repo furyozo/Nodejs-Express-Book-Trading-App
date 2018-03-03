@@ -1,0 +1,35 @@
+<div id="public-index" class="container">
+
+  <div class="row">
+
+    <div class="col-xs-12">
+      <h3>Currently active polls:</h3>
+      <hr>
+
+      {{#each polls as |poll _id|}}
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-signal panel-glyphicon" aria-hidden="true"></span>
+          {{ poll.name }}
+        </div>
+        <div class="panel-body">
+          <ul class="pull-left">
+            {{#each poll.options as |option|}}
+            <li>{{ option }}</li>
+            {{/each}}
+          </ul>
+          <a href="/poll/{{ poll._id }}">
+            <button class="btn btn-default pull-right" type="button" name="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </a>
+        </div>
+      </div>
+
+      {{/each}}
+
+    </div>
+  </div>
+
+</div>

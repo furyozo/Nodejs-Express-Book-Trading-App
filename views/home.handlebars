@@ -1,0 +1,74 @@
+<div id="private-home" class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+      <h4>Your profile settings:</h4>
+      <br>
+      <form action="/user/{{user._id}}/edit" method="post">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input class="form-control" type="text" name="fname" value="{{user.full_name}}">
+        </div>
+        <div class="form-group">
+          <label for="name">City:</label>
+          <input class="form-control" type="text" name="city" value="{{user.city}}">
+        </div>
+        <div class="form-group">
+          <label for="name">State:</label>
+          <input class="form-control" type="text" name="state" value="{{user.state}}">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-default" type="submit" name="" value="Edit">
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h4>Your books:</h4>
+      <br>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Book Name
+          <span class="glyphicon glyphicon-book pull-right panel-glyphicon" aria-hidden="true"></span>
+        </div>
+        <div class="panel-body">
+          Book Heading
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Add a new book
+          <span class="glyphicon glyphicon-plus pull-right panel-glyphicon" aria-hidden="true"></span>
+        </div>
+        <div class="panel-body">
+          <form class="" action="/book/add" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input class="form-control" type="text" name="name" value="">
+            </div>
+            <div class="form-group">
+              <label for="image">Image:</label>
+              <input type="file" name="image" value="">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-default pull-right" type="submit" name="" value="Add">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
