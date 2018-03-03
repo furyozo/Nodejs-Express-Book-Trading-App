@@ -9,7 +9,9 @@ var User = require('../models/User.js')
 
 /* get user private are */
 router.get('/', Authenticator.isAuthenticated, function(req, res, next) {
-  res.render('home', {user: req.session.user});
+  Book.getBooksByUser(req.session.user, function(err, books) {
+    res.render('home', {user: req.session.user, books: books});
+  })
 })
 
 module.exports = router;
