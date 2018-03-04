@@ -35,4 +35,12 @@ router.post('/:id/edit', Authorize.isAuthorizedUser, function(req, res, next) {
   })
 })
 
+/* edit existing user */
+router.get('/:name', function(req, res, next) {
+  User.findOne({name: req.params.name}, function(err, user) {
+    if (err) res.render('auth/register', err);
+    else res.render('user', {user: user});
+  })
+})
+
 module.exports = router;

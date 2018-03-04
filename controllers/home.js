@@ -11,7 +11,7 @@ var User = require('../models/User.js')
 /* get user private are */
 router.get('/', Authenticator.isAuthenticated, function(req, res, next) {
   Book.getBooksByUser(req.session.user, function(err, books) {
-    Trade.find({wants_user: req.session.user._id}, function(err, trades) {
+    Trade.find({'wants.name': req.session.user.name}, function(err, trades) {
       res.render('home', {user: req.session.user, books: books, trades: trades});
     })
   })

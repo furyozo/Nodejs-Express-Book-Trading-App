@@ -50,6 +50,9 @@ a {
     min-width: 200px;
     background-color: #66499e;
     color: #fff; }
+
+#public-user {
+  margin-top: 10vh; }
 @font-face {
   font-family: 'Raleway';
   src: url("/fonts/Raleway-SemiBold.ttf"); }
