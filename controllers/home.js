@@ -11,8 +11,10 @@ var User = require('../models/User.js')
 /* get user private are */
 router.get('/', Authenticator.isAuthenticated, function(req, res, next) {
   Book.getBooksByUser(req.session.user, function(err, books) {
-    Trade.find({'wants.name': req.session.user.name}, function(err, trades) {
-      res.render('home', {user: req.session.user, books: books, trades: trades});
+    Trade.find({'wants.name': req.session.user.name}, function(err, trades_to_you) {
+      Trade.find({'offering.name': req.session.user.name}, function(err, your_trades) {
+        res.render('home', {user: req.session.user, books: books, trades_to_you: trades_to_you, your_trades: your_trades});
+      })
     })
   })
 })

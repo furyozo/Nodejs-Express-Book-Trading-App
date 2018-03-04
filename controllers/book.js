@@ -38,4 +38,22 @@ router.get('/:wants_id/trade/:offering_id', Authenticator.isAuthenticated, funct
   })
 })
 
+/* accept a book trade */
+router.get('/trade/:id/accept', Authenticator.isAuthenticated, function(req, res, next) {
+  Trade.findById(req.params.id, function(err, trade) {
+    if (err) console.error(err);
+    trade.accepted = true;
+    trade.save();
+    res.redirect('/home');
+  })
+})
+
+/* decline a book trade */
+router.get('/trade/:id/decline', Authenticator.isAuthenticated, function(req, res, next) {
+  Trade.remove({_id: req.params.id}, function(err, trade) {
+    if (err) console.error(err);
+    res.redirect('/home');
+  })
+})
+
 module.exports = router;
