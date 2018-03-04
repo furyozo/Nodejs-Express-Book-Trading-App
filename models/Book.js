@@ -19,11 +19,6 @@ var BookSchema = new mongoose.Schema({
   }
 });
 
-/**
- * returns all users polls
- * @param  {Book} user_id id of the user whose polls are to be returned
- * @return {Book} polls return poll objects specified by user_id
- */
 BookSchema.statics = {
 
   // create a new book entry
@@ -59,19 +54,6 @@ BookSchema.statics = {
     })
   },
 
-  // remove the book specified by id
-  removeByAuthor: function(req, callback) {
-    this.findById(req.params.id, (err, book) => {
-      if (err)
-        return console.error(err);
-      if (book.user_id !== req.params.id)
-        return callback("you are not an owner of that book")
-      book.remove()
-      callback()
-    })
-  }
-
 }
-
 
 module.exports = mongoose.model('Book', BookSchema);

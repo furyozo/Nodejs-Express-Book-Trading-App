@@ -83,4 +83,33 @@
 
   </div>
 
+  <div class="row">
+
+    <div class="col-xs-12">
+      <h4>Trade offers: </h4>
+      <br>
+    </div>
+
+    {{#each trades as |trade|}}
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Book offered:
+          <span class="glyphicon glyphicon-book pull-right panel-glyphicon" aria-hidden="true"></span>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" name="image" value="">
+          </div>
+          <div class="form-group">
+            <input class="btn btn-default btn-block" type="submit" name="" value="Accept">
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+
 </div>

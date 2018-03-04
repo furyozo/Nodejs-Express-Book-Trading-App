@@ -19,12 +19,13 @@ a {
     border-color: #66499e; }
 
 #public-index {
-  margin-top: 10vh; }
+  margin-top: 5vh; }
   #public-index .btn {
     background-color: #66499e;
     color: #fff; }
   #public-index .panel {
-    position: relative; }
+    position: relative;
+    height: 340px; }
     #public-index .panel-glyphicon {
       margin-right: 4px;
       color: #66499e; }
@@ -33,6 +34,9 @@ a {
       top: 0;
       right: 0;
       margin: 8px; }
+  #public-index .modal {
+    max-height: 600px;
+    overflow-y: scroll; }
 
 #public-navigation {
   font-weight: 500; }
