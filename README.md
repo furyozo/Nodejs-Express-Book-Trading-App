@@ -12,4 +12,4 @@ $ node index.js
 ```
 
 ### Live version
-a live version of the application is available at https://p-poll.herokuapp.com/
+a live version of the application is available at https://nodejs-booktrading-app.herokuapp.com/
