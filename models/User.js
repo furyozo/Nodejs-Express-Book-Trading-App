@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 var bcrypt = require('bcrypt')
 
-mongoose.connect('mongodb://localhost/booktrading-app');
+mongoose.connect('mongodb://prase:prase@ds255958.mlab.com:55958/booktrading-app');
 
 var UserSchema = new mongoose.Schema({
   name: {

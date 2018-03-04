@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 var ObjectId = mongoose.Schema.ObjectId;
 
-mongoose.connect('mongodb://localhost/tradetrading-app');
+mongoose.connect('mongodb://prase:prase@ds255958.mlab.com:55958/booktrading-app');
 
 var Book = require('./Book.js')
 var User = require('./User.js')
